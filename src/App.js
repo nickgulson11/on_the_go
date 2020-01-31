@@ -1,30 +1,38 @@
 import React from 'react';
 import logo from './logo.svg';
+import { Dropdown } from 'react-bootstrap';
+import Background from './data/img.jpg';
 import './App.css';
 import firebase from 'firebase/app';
 import 'firebase/database';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+var sectionStyle = {
+  width: "100%",
+  height: "2000px",
+  backgroundImage: `url(${Background})`
+};
 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = () =>  (
+  <div>
+    <section style={ sectionStyle }>
+    <h1 align="center"> On The Go : Our Travel Expert </h1>
+    
+    <Dropdown>
+  <Dropdown.Toggle variant="success" id="dropdown-basic">
+    Dropdown Button
+  </Dropdown.Toggle>
+  <Dropdown.Menu>
+    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+      </section>
+  </div>
+);
 
 const firebaseConfig = {
   apiKey: "AIzaSyBdTkdXSYAUdiiXAFlVaaAgJ_QQaZfdyHI",
